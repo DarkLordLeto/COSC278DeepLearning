@@ -1,0 +1,11 @@
+In base_categorization followed the instruction strictly
+
+In improved model: added more conv  -bu -relu layers combo and larger kernel size, also added dropout layers, I also tried to change Avg pool to Max pool, but that negatively impact the model
+
+Train opts: trained for more epoches due to I did data augmentation, reduced step size since the model is deeper. I also tried weight decay of 0.0005 at the start without adding much more layers (only one new conv) to the base model, the result I could get is around 62% 
+
+Data: did flip, color jigger and crop as data augmentation method.(please un comment the code block in create_dataset.py to acess data augmentation) I also tried whitening and contrast normalization but they both seem to negatively impact the model performace
+
+Others: The random seed do not seem to have large influence on my model performace, before adding data augmentation, the model tends to overfit, now it has slight underfit trend on the augmented dataset
+
+Final result: 64.84% at 46th epoch
